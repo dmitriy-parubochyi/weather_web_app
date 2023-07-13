@@ -1,0 +1,262 @@
+
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(to bottom right, white, rgb(109, 213, 173));
+    height: 100vh;
+    overflow: hidden;
+}
+
+.error-message {
+    display: none; /* Hide the error message by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+
+.container {
+
+    max-width: 600px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.name {
+    display: flex;
+    justify-content: center ;
+    margin-bottom: 5px;
+}
+
+.name img {
+    height: 6vh; /* Adjust the value to reduce the height */
+    cursor: pointer;
+  }
+
+.search-bar {
+    margin-bottom: 20px;
+    display: flex;
+
+
+}
+
+.search-bar input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 3;
+    font-family:'Raleway', sans-serif; 
+}
+
+.search-bar button {
+    flex: 1;
+    width: 100%;
+    padding: 10px;
+    font-size: 17px;
+    background-color: rgb(109, 213, 173);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+
+.weather-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 0;
+    opacity: 0;
+/*     transition: height 1s ease, opacity 1s ease;
+    overflow: hidden; */
+}
+
+.location {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.location h2,
+.location p {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.info-container{
+    display: flex;
+/*     justify-content: space-between; */
+    width: 100%;
+    max-height: 76%;
+}
+
+.data-card {
+    width: 40%;
+}
+
+.weather-data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+}
+
+#weather-illustration{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#weather-icon{
+    height: 46%;
+    margin-top: 10px;
+}
+
+.card {
+    flex: 1 0 45%;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card h3 {
+    font-size: 24px;
+    color: #777;
+}
+
+.card h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #777;
+}
+
+.card p {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.units{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+@keyframes opacityChange {
+
+    100% {
+      opacity: 1;
+    }
+  }
+  
+
+@keyframes rollOut {
+
+    100% {
+      height: 458px;
+    }
+  }
+  
+  .weather-info.roll-out {
+    animation-name: rollOut, opacityChange;
+    animation-duration: 1s, 3s;
+    animation-fill-mode: forwards;
+  }
+  
+  .mobile-units{
+    display: none;
+  }
+
+@media screen and (max-width: 640px) {
+    body{
+        background: #fff;
+    }
+
+    .container{
+        box-shadow: none;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search-bar button {
+        margin-left: 0;
+        margin-top: 20px;
+        width: 60%;
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+
+    .units {
+       display: none;
+    }
+    .weather-description{
+        margin-left: 10px;
+    }
+    .mobile-units{
+        display: inline;
+      }
+
+      #temperature{
+        display: inline;
+      }
+
+      #humidity{
+        display: inline;
+      }
+
+      #wind-speed{
+        display: inline;
+      }
+
+      #weather-illustration {
+        margin-left: 10px;
+      }
+
+}
